@@ -14,9 +14,8 @@ public class NumbersFromAFile {
         System.out.print("Upper bound? ");
         int upperBound = Integer.valueOf(scanner.nextLine());
 
-        int count = 0;
         try (Scanner scan = new Scanner(Paths.get(file))) {
-
+            int count = 0;
             while (scan.hasNextLine()) {
                 int number = Integer.valueOf(scan.nextLine());
 
@@ -24,11 +23,11 @@ public class NumbersFromAFile {
                     count++;
                 }
             }
+
+            System.out.println("Numbers: " + count);
         } catch (Exception e) {
             System.out.println("Error: " + e.getMessage());
         }
-
-        System.out.println("Numbers: " + count);
     }
 
 }
